@@ -442,15 +442,14 @@ class _SignInWidgetState extends State<SignInWidget>
 
                                 // You will have to add an action on this rich text to go to your login page.
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 12),
+                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
                                   child: RichText(
                                     textScaleFactor:
                                     MediaQuery.of(context).textScaleFactor,
                                     text: TextSpan(
                                       children: [
                                         TextSpan(
-                                          text: 'Forgot password? ',
+                                          text: 'Forgot password?',
                                           style: TextStyle(),
                                         ),
                                         TextSpan(
