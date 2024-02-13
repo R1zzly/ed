@@ -1,7 +1,5 @@
 import 'package:tgroupbuy/data/models/product.dart';
-
 import '../../common/error/exceptions.dart';
-
 import '../../utils/api_constants.dart';
 import 'package:dio/dio.dart';
 
@@ -101,7 +99,7 @@ class ShopRepoImpl implements ShopRepo {
         );
       }
       List<Product> productList = (response.data as List)
-          .map((productJson) => Product.fromJson(productJson))
+          .map((productJson) => Product.fromMap(productJson))
           .toList();
       return productList;
     } on ApiException {

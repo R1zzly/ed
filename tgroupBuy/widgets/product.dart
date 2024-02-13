@@ -1,13 +1,8 @@
 import 'package:flutterflow_ui/flutterflow_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
+
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
-
-import '../data/models/product.dart';
-export '../data/models/product.dart';
 
 class ProductWidget extends StatefulWidget {
   const ProductWidget({super.key});
@@ -594,6 +589,7 @@ class _ProductWidgetState extends State<ProductWidget>
                                           color: true
                                               ? FlutterFlowTheme.of(context)
                                                   .accent1
+                                              // ignore: dead_code
                                               : FlutterFlowTheme.of(context)
                                                   .secondaryBackground,
                                           borderRadius:

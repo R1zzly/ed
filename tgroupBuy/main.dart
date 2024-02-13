@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tgroupbuy/widgets/signIn.dart';
-import 'widgets/homePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +23,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home:
-          const SignInWidget(), // Set your HomePageWidget as the home screen
+          const SignInWidget(),
     );
   }
 }

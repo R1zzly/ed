@@ -18,10 +18,8 @@ class SignUpWidget extends StatefulWidget {
 class _SignUpWidgetState extends State<SignUpWidget> {
   final _firstNameController = TextEditingController();
   final _firstNameFocusNode = FocusNode();
-  final bool _firstNameVisibility = false;
   final _lastNameController = TextEditingController();
   final _lastNameFocusNode = FocusNode();
-  bool _lastNameVisibility = false;
   final _emailController = TextEditingController();
   final _emailFocusNode = FocusNode();
   final _passwordController = TextEditingController();
@@ -29,7 +27,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
   bool _passwordVisibility = false;
   final _phoneController = TextEditingController();
   final _phoneFocusNode = FocusNode();
-  bool _phoneVisibility = false;
 
   bool _isLoading = false;
 
@@ -238,7 +235,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 focusNode: _lastNameFocusNode,
                                 autofocus: true,
                                 autofillHints: const [AutofillHints.familyName],
-                                obscureText: !_lastNameVisibility,
                                 decoration: InputDecoration(
                                   labelText: 'Last Name',
                                   labelStyle:
@@ -276,21 +272,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   filled: true,
                                   fillColor: FlutterFlowTheme.of(context)
                                       .primaryBackground,
-                                  suffixIcon: InkWell(
-                                    onTap: () => setState(
-                                      () => _lastNameVisibility =
-                                          !_lastNameVisibility,
-                                    ),
-                                    focusNode: FocusNode(skipTraversal: true),
-                                    child: Icon(
-                                      _lastNameVisibility
-                                          ? Icons.visibility_outlined
-                                          : Icons.visibility_off_outlined,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      size: 24,
-                                    ),
-                                  ),
                                 ),
                                 style: FlutterFlowTheme.of(context).bodyMedium,
                                 minLines: 1,
@@ -431,7 +412,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 autofillHints: const [
                                   AutofillHints.telephoneNumber
                                 ],
-                                obscureText: !_phoneVisibility,
                                 decoration: InputDecoration(
                                   labelText: 'Phone number',
                                   labelStyle:
@@ -469,21 +449,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   filled: true,
                                   fillColor: FlutterFlowTheme.of(context)
                                       .primaryBackground,
-                                  suffixIcon: InkWell(
-                                    onTap: () => setState(
-                                      () =>
-                                          _phoneVisibility = !_phoneVisibility,
-                                    ),
-                                    focusNode: FocusNode(skipTraversal: true),
-                                    child: Icon(
-                                      _phoneVisibility
-                                          ? Icons.visibility_outlined
-                                          : Icons.visibility_off_outlined,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      size: 24,
-                                    ),
-                                  ),
                                 ),
                                 style: FlutterFlowTheme.of(context).bodyMedium,
                                 minLines: 1,

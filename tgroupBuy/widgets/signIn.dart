@@ -7,8 +7,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tgroupbuy/common/error/exceptions.dart';
 import 'package:tgroupbuy/data/repository/authrepo.dart';
 import 'package:tgroupbuy/data/repository/header_gen.dart';
-import 'package:tgroupbuy/widgets/homePage.dart';
 import 'package:tgroupbuy/widgets/signUp.dart';
+import 'package:tgroupbuy/widgets/simpleHomePage.dart';
 
 class SignInWidget extends StatefulWidget {
   const SignInWidget({super.key});
@@ -276,6 +276,7 @@ class _SignInWidgetState extends State<SignInWidget>
                                         child: Icon(
                                           true
                                               ? Icons.visibility_outlined
+                                              // ignore: dead_code
                                               : Icons.visibility_off_outlined,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
@@ -301,6 +302,7 @@ class _SignInWidgetState extends State<SignInWidget>
                                             _isloading = true;
                                           });
                                           try {
+                                            // ignore: unused_local_variable
                                             final res = await AuthRepoImpl(
                                                     Dio(), HeaderGen())
                                                 .login(_emailController.text,
@@ -310,7 +312,7 @@ class _SignInWidgetState extends State<SignInWidget>
                                                   .pushReplacement(
                                                 MaterialPageRoute(
                                                   builder: (context) =>
-                                                      const HomePageWidget(),
+                                                      const SHomePageWidget(),
                                                 ),
                                               );
                                             }
