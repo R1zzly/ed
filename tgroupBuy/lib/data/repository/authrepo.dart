@@ -1,4 +1,5 @@
-import '../models/r/User.dart';
+import 'package:tgroupbuy/data/models/User.dart';
+
 import '../../common/error/exceptions.dart';
 
 import '../../utils/api_constants.dart';

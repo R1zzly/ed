@@ -1,36 +1,9 @@
 import 'package:flutterflow_ui/flutterflow_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
-import '../data/models/successpayment.dart';
-export '../data/models/successpayment.dart';
-
-class SuccessPaymentWidget extends StatefulWidget {
+class SuccessPaymentWidget extends StatelessWidget {
   const SuccessPaymentWidget({super.key});
-
-  @override
-  State<SuccessPaymentWidget> createState() => _SuccessPaymentWidgetState();
-}
-
-class _SuccessPaymentWidgetState extends State<SuccessPaymentWidget> {
-  late SuccessPaymentModel _model;
-
-  final scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-    _model = createModel(context, () => SuccessPaymentModel());
-  }
-
-  @override
-  void dispose() {
-    _model.dispose();
-
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +17,6 @@ class _SuccessPaymentWidgetState extends State<SuccessPaymentWidget> {
     }
 
     return Scaffold(
-      key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
         top: true,

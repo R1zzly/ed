@@ -1,32 +1,45 @@
-import 'package:flutterflow_ui/flutterflow_ui.dart';
-import '../../widgets/product.dart' show ProductWidget;
-import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
+import 'dart:convert';
 
-class ProductModel extends FlutterFlowModel<ProductWidget> {
-  ///  State fields for stateful widgets in this page.
+class Product {
+  final String id;
+  final int price;
+  final String name;
+  final String category;
+  final int rating;
+  final String image;
+  Product({
+    required this.id,
+    required this.price,
+    required this.name,
+    required this.category,
+    required this.rating,
+    required this.image,
+  });
+  
 
-  final unfocusNode = FocusNode();
-  // State field(s) for Checkbox widget.
-  bool? checkboxValue1;
-  // State field(s) for Checkbox widget.
-  bool? checkboxValue2;
-  // State field(s) for Checkbox widget.
-  bool? checkboxValue3;
-
-  /// Initialization and disposal methods.
-
-  void initState(BuildContext context) {}
-
-  void dispose() {
-    unfocusNode.dispose();
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      '_id': id,
+      'price': price,
+      'product_name': name,
+      'category': category,
+      'rating': rating,
+      'image': image,
+    };
   }
 
-/// Action blocks are added here.
+  factory Product.fromMap(Map<String, dynamic> map) {
+    return Product(
+      id: map['_id'] as String,
+      price: map['price'] as int,
+      name: map['product_name'] as String,
+      category: map['category'] as String,
+      rating: map['rating'] as int,
+      image: map['image'] as String,
+    );
+  }
 
-/// Additional helper methods are added here.
+  String toJson() => json.encode(toMap());
+
+  factory Product.fromJson(String source) => Product.fromMap(json.decode(source) as Map<String, dynamic>);
 }
